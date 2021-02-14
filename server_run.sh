@@ -3,4 +3,4 @@
 . ~/.nvm/nvm.sh
 npm install 
 
-node server.js
+npm start
