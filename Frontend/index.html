@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="description"
+        content="Xmeme Website">
+    <meta name="author" content="Webpixels">
+    <title>X-Meme | HOME</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@1,600&display=swap" rel="stylesheet">
+    <style>
+        @keyframes hidePreloader {
+            0% {
+                width: 100%;
+                height: 100%
+            }
+
+            100% {
+                width: 0;
+                height: 0
+            }
+        }
+
+        body>div.preloader {
+            position: fixed;
+            background: #fff;
+            width: 100%;
+            height: 100%;
+            z-index: 1071;
+            opacity: 0;
+            transition: opacity .5s ease;
+            overflow: hidden;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        body:not(.loaded)>div.preloader {
+            opacity: 1
+        }
+
+        body:not(.loaded) {
+            overflow: hidden
+        }
+
+        body.loaded>div.preloader {
+            animation: hidePreloader .5s linear .5s forwards
+        }
+        body{
+            font-family: "Nunito Sans",sans-serif !important;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function () {
+            setTimeout(function () {
+                document.querySelector("body").classList.add("loaded")
+            }, 300)
+        })
+    </script>
+    <link rel="icon" href="./assets/img/brand/favicon.png" type="image/png">
+    <link rel="stylesheet" href="./assets/libs/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/quick-website.css" id="stylesheet">
+</head>
+
+<body>
+    <!-- Preloader code  -->
+    <div class="preloader">
+        <div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div>
+    </div>
+
+    <!-- Navbar of the index page -->
+    <nav class="navbar navbar-horizontal navbar-expand-lg navbar-dark bg-dark ">
+        <div class="container">
+            <a class="navbar-brand" href="https://www.crio.do/" target="blank">Crio.Do</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-info" aria-controls="navbar-info" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-info">
+                
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-icon" href="https://abhi2080.github.io/My-resume/" target="blank">
+                            <i class="fab fa-netlify"></i>
+                            <span class="nav-link-inner--text">Portfolio</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-icon" href="https://github.com/Abhi2080" target="blank">
+                            <i class="fab fa-github"></i>
+                            <span class="nav-link-inner--text">Abhinav</span>
+                        </a>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- Form for filling the details before posting a meme -->
+    <section class="bg-section-secondary">
+        <div class="container d-flex align-items-center text-center text-lg-left py-lg-3 border-bottom">
+            <div class="col px-0">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <span class="avatar bg-dark text-white">X</span>
+                        <span class="avatar bg-primary text-white">M</span>
+                        <span class="avatar bg-dark text-white">E</span>
+                        <span class="avatar bg-primary text-white">M</span>
+                        <span class="avatar bg-dark text-white">E</span>
+                        <h6 class="font-weight-light text-muted mt-2"><span class="badge badge-primary">
+                            <i data-feather="check"></i>Share your creativity here
+                        </span></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="slice slice-lg bg-dark-secondary" style="padding-top: 20px; padding-bottom: 10px;">
+        <div class="container">
+            <form>
+                <div class="form-group">
+                    <!-- <label class="form-control-label">Name</label> -->
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i data-feather="user"></i>&nbsp; Name&nbsp;&nbsp;</span>
+                        </div>
+                        <input type="text" class="form-control" id="input-name" placeholder="MS Dhoni"  data-toggle="tooltip" data-placement="top" title="Enter your name here">
+                        <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="Enter your name here"> Help </button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!-- <label class="form-control-label">Caption</label> -->
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i data-feather="edit"></i> &nbsp; Caption</span>
+                        </div>
+                        <input type="text" class="form-control" id="input-caption" placeholder="Meme for my place"  data-toggle="tooltip" data-placement="top" title="Give it a catchy caption">
+                        <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="Give it a catchy caption"> Help </button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!-- <label class="form-control-label">URL</label> -->
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i data-feather="globe"></i>&nbsp; URL&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        </div>
+                        <input type="text" class="form-control" id="input-url" placeholder="https://images.pexels.com/photos/3573382/pexels-photo-3573382.jpegs" data-toggle="tooltip" data-placement="top" title="Provide the meme URL Here">
+                        <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="Provide the meme URL Here"> Help </button>
+                    </div>
+                </div>
+                
+                <div class="mt-2 text-center">
+                    <button type="button" class="btn btn-animated btn-dark btn-animated-x"  data-toggle="tooltip" data-placement="top" title="Click here to post your meme for the world to see it" onclick="postMeme()">
+                        <span class="btn-inner--visible">POST Meme</span>
+                        <span class="btn-inner--hidden">
+                            <i data-feather="arrow-right"></i>
+                        </span>
+                    </button>
+                </div>
+            </form>
+            
+        </div>
+        
+    </section>
+    <section class="slice pt-2 pb-2 bg-section-primary">
+        <div class="container">
+            <div class="row">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i data-feather="search"></i> Custom Serach</span>
+                            </div>
+                            <input id="searchText" type="text" class="form-control" id="input-name" placeholder="Search by name or string or url"  data-toggle="tooltip" data-placement="top" title="Enter any string to search in the list of memes">
+                            <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="Press to Search" onclick="SearchMeme()"> Search </button>
+                        </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contains all the memes that are to be populated using axios GET request to the backend using javascript -->
+    <section class="slice pt-5 pb-7 bg-section-secondary">
+        <div class="container">
+            <div class="row" id="memeBox">
+
+            </div>
+            
+            
+        </div>
+    </section>
+
+    <!-- Footer info -->
+<nav class="navbar navbar-horizontal navbar-expand-lg navbar-dark bg-dark mt-4">
+    <div class="container">
+        <a class="navbar-brand" href="https://abhi2080.github.io/My-resume/">Developed By Abhinav</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-info" aria-controls="navbar-info" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-info">
+            
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link nav-link-icon" href="https://abhi2080.github.io/My-resume/">
+                        <i class="fab fa-facebook-s"></i>
+                        <span class="nav-link-inner--text">Portfolio</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-icon" href="https://www.linkedin.com/in/abhinav-singh-7442871a1/">
+                        <i class="fab fa-linkedIn"></i>
+                        <span class="nav-link-inner--text">LinkedIn</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-icon" href="https://github.com/Abhi2080">
+                        <i class="fab fa-github"></i>
+                        <span class="nav-link-inner--text">Abhinav</span>
+                    </a>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+</nav>
+
+    <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="./assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/libs/svg-injector/dist/svg-injector.min.js"></script>
+    <script src="./assets/libs/feather-icons/dist/feather.min.js"></script>
+    <script src="./assets/libs/in-view/dist/in-view.min.js"></script>
+    <script src="./assets/libs/sticky-kit/dist/sticky-kit.min.js"></script>
+    <script src="./assets/libs/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="./assets/js/quick-website.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- http://localhost:8081/memes -->
+    
+    <!-- TO get the latest memes -->
+    <script>
+        $(document).ready(async function(){
+            try{
+                const res = await axios({
+                    method : 'GET',
+                    url: 'http://localhost:8081/memes'
+                })
+
+                console.log( res.data );
+                res.data.forEach(element => {
+                    $("#memeBox").append(
+                        `<div class="col-xl-4 col-md-6" id="${element.id}">
+                            <h1 style="visibility: hidden; display: none;">${element.id}</h1>
+                            <div class="card hover-translate-y-n3 hover-shadow-lg overflow-hidden">
+                                <div class="position-relative overflow-hidden"><img
+                                            alt="Image placeholder" src="${element.url}"
+                                            class="card-img-top">
+                                </div>
+                                <div class="card-body py-4"><p class="mt-3 mb-0 lh-170 h5">${element.caption}</p>
+                                    <small style="word-break: break-all;">${element.url}</small>
+                                </div>
+                                <div class="card-footer border-0 delimiter-top">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto"><span class="avatar avatar-sm bg-primary rounded-circle">${element.name[0]}</span>
+                                            <span class="text-sm mb-0 avatar-content">${element.name}</span>
+                                        </div>
+                                        
+                                        <div class="col text-right text-right">
+                                            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal_5${element.id}">Edit</button>
+                                            
+                                        </div>
+                                        <button type="button" class="btn btn-danger rounded-circle btn-icon-only"
+                                         onclick=DeleteMeme("${element.id}")>
+                                            &#10008;
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal modal-dark fade" id="modal_5${element.id}" tabindex="-1" role="dialog" aria-labelledby="modal_5${element.id}" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title h6" id="modal_title_6">Edit the meme with id ${element.id}</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form>
+                                                                <div class="form-group">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text"><i data-feather="user"></i>&nbsp; Name&nbsp;&nbsp;</span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" id="input-name${element.id}" placeholder="${element.name}"  data-toggle="tooltip"                                               data-placement="top" title="Enter your name here" readonly>
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text"><i data-feather="edit"></i> &nbsp; Caption</span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" id="input-caption${element.id}" placeholder="Meme for my place"  data-toggle="tooltip"                                               data-placement="top" title="Give it a catchy caption">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text"><i data-feather="globe"></i>&nbsp; URL&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" id="input-url${element.id}" placeholder="https://images.pexels.com/photos/3573382/                                               pexels-photo-3573382.jpegs" data-toggle="tooltip" data-placement="top" title="Provide the meme URL Here">
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                            <div class="py-1 text-center">
+                                                                <h5 class="heading h4 mt-2">Click the button below to Update</h5>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-sm btn-white" data-dismiss="modal" onclick = UpdateMeme("${element.id}")>Update</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>`
+                    )
+                });
+                // put this data in the page 
+            }catch(err){
+                console.log(err)
+            }
+        })
+    </script>
+
+    <!-- TO upadte a meme with a given id -->
+    <script>
+        async function UpdateMeme(id){
+            caption = $(`#input-caption${id}`).val().trim()
+            url = $(`#input-url${id}`).val().trim()
+
+            if( caption == "" && url == "" ){
+                Swal.fire(
+                   'Fail',
+                   'Please enter all the details',
+                   'warning'
+                 )
+                 return;
+            }
+            try{
+                const res = await axios({
+                    method : 'patch',
+                    url : `http://localhost:8081/memes/${id}`,
+                    data : {
+                        caption : caption,
+                        url : url
+                    }
+                })
+                if( res.status == 200 ){
+                    Swal.fire(
+                   'success',
+                   'Posted successfully',
+                   'success'
+                 )
+                 if(caption != ""){ $(`#${id} p`).text(caption) }
+                 if( url != "" ) { $(`#${id} img`).attr('src', url) } 
+                }
+            }catch(err){
+                Swal.fire(
+                   'Fail',
+                   'Internal server error',
+                   'warning'
+                 )
+            }
+        }
+    </script>
+
+<!-- Post A meme to the backend -->
+    <script>
+        async function postMeme(){
+            // check for all the inputs and display the error message
+
+            if($("#input-name").val().trim() == ""){
+                Swal.fire(
+                   'Fail',
+                   'Please Enter your name',
+                   'warning'
+                 )
+                 return;
+            }else if( $("#input-caption").val().trim() == "" ){
+                Swal.fire(
+                   'Fail',
+                   'Please Enter a caption',
+                   'warning'
+                 )
+                 return;
+            }else if( $("#input-url").val().trim() == ""){
+                Swal.fire(
+                   'Fail',
+                   'Please Enter image url',
+                   'warning'
+                 )
+                 return;
+            }else{
+                 try{
+                    const res = await axios({
+                        method: 'POST',
+                        url : 'http://localhost:8081/memes',
+                        data : {
+                            name : $("#input-name").val().trim(),
+                            url : $("#input-url").val().trim(),
+                            caption : $("#input-caption").val().trim()
+                        }
+                    })
+
+                    if( res.status == 200 ){
+                        Swal.fire(
+                           'success',
+                           'Posted successfully',
+                           'success'
+                         )
+                         addEle(res.data.id, $("#input-name").val().trim(),$("#input-url").val().trim(),$("#input-caption").val().trim() )
+                    }else if( res.status == 409 ){
+                        Swal.fire(
+                       'Fail',
+                       'Same Meme Already Exists',
+                       'warning'
+                     )
+                     return;
+                    }else{
+                        Swal.fire(
+                       'Fail',
+                       'Internal Error',
+                       'warning'
+                     )
+                     return;
+                    }
+                 }catch(err){
+                    Swal.fire(
+                       'Fail',
+                       'Internal Error',
+                       'warning'
+                     )
+                     return;
+                 }
+            }
+
+
+        }
+    </script>
+
+<!-- Function to add a new meme card after posting a meme -->
+    <script>
+        function addEle(id, name, url, caption ){
+            $("#memeBox").prepend(
+                        `<div class="col-xl-4 col-md-6" id="${id}">
+                            <h1 style="visibility: hidden; display: none;">${id}</h1>
+                            <div class="card hover-translate-y-n3 hover-shadow-lg overflow-hidden">
+                                <div class="position-relative overflow-hidden"><img
+                                            alt="Image placeholder" src="${url}"
+                                            class="card-img-top">
+                                </div>
+                                <div class="card-body py-4"><p class="mt-3 mb-0 lh-170 h5">${caption}</p>
+                                    <small style="word-break: break-all;">${url}</small>
+                                </div>
+                                <div class="card-footer border-0 delimiter-top">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto"><span class="avatar avatar-sm bg-primary rounded-circle">${name[0]}</span>
+                                            <span class="text-sm mb-0 avatar-content">${name}</span>
+                                        </div>
+                                        <div class="col text-right text-right">
+                                            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal_5${id}">
+                                                Edit
+                                            </button>
+
+                                            <button type="button" class="btn btn-danger rounded-circle btn-icon-only"
+                                         onclick=DeleteMeme("${id}")>
+                                            &#10008;
+                                        </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal modal-dark fade" id="modal_5${id}" tabindex="-1" role="dialog" aria-labelledby="modal_5${id}" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title h6" id="modal_title_6">Edit the meme with id ${id}</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form>
+                                                                <div class="form-group">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text"><i data-feather="user"></i>&nbsp; Name&nbsp;&nbsp;</span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" id="input-name${id}" placeholder="${name}"  data-toggle="tooltip"                                               data-placement="top" title="Enter your name here" readonly>
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text"><i data-feather="edit"></i> &nbsp; Caption</span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" id="input-caption${id}" placeholder="Meme for my place"  data-toggle="tooltip"                                               data-placement="top" title="Give it a catchy caption">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text"><i data-feather="globe"></i>&nbsp; URL&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" id="input-url${id}" placeholder="https://images.pexels.com/photos/3573382/                                               pexels-photo-3573382.jpegs" data-toggle="tooltip" data-placement="top" title="Provide the meme URL Here">
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                            <div class="py-1 text-center">
+                                                                <h5 class="heading h4 mt-2">Click the button below to Update</h5>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-sm btn-white" data-dismiss="modal" onclick = UpdateMeme("${id}")>Update</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>`
+                    )
+        }
+        
+    </script>
+
+
+<!-- Function that communicates with the backend and enables searching using axios -->
+    <script>
+        async function SearchMeme(){
+            try{
+                const string = $("#searchText").val().trim();
+                if( string == "" ){
+                    Swal.fire(
+                       'Fail',
+                       'Enter the text',
+                       'warning'
+                     )
+                     return;
+                }
+                $("#searchText").val(' ')
+                const res =  await axios({
+                    method : 'GET',
+                    url : `http://localhost:8081/search/${string}`
+                })
+                if( res.status == 200 ){
+                    console.log( res.data );
+                    $("#memeBox").text(' ');
+                    res.data.forEach( function(element) {
+                        $("#memeBox").append(
+                        `<div class="col-xl-4 col-md-6" id="${element.id}">
+                            <h1 style="visibility: hidden; display: none;">${element.id}</h1>
+                            <div class="card hover-translate-y-n3 hover-shadow-lg overflow-hidden">
+                                <div class="position-relative overflow-hidden"><img
+                                            alt="Image placeholder" src="${element.url}"
+                                            class="card-img-top">
+                                </div>
+                                <div class="card-body py-4"><p class="mt-3 mb-0 lh-170 h5">${element.caption}</p>
+                                    <small style="word-break: break-all;">${element.url}</small>
+                                </div>
+                                <div class="card-footer border-0 delimiter-top">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto"><span class="avatar avatar-sm bg-primary rounded-circle">${element.name[0]}</span>
+                                            <span class="text-sm mb-0 avatar-content">${element.name}</span>
+                                        </div>
+                                        <div class="col text-right text-right">
+                                            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal_5${element.id}">
+                                                Edit
+                                            </button>
+                                            <button type="button" class="btn btn-danger rounded-circle btn-icon-only"
+                                         onclick=DeleteMeme("${element.id}")>
+                                            &#10008;
+                                        </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal modal-dark fade" id="modal_5${element.id}" tabindex="-1" role="dialog" aria-labelledby="modal_5${element.id}" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title h6" id="modal_title_6">Edit the meme with id ${element.id}</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form>
+                                                                <div class="form-group">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text"><i data-feather="user"></i>&nbsp; Name&nbsp;&nbsp;</span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" id="input-name${element.id}" placeholder="${element.name}"  data-toggle="tooltip"                                               data-placement="top" title="Enter your name here" readonly>
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text"><i data-feather="edit"></i> &nbsp; Caption</span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" id="input-caption${element.id}" placeholder="Meme for my place"  data-toggle="tooltip"                                               data-placement="top" title="Give it a catchy caption">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text"><i data-feather="globe"></i>&nbsp; URL&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" id="input-url${element.id}" placeholder="https://images.pexels.com/photos/3573382/                                               pexels-photo-3573382.jpegs" data-toggle="tooltip" data-placement="top" title="Provide the meme URL Here">
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                            <div class="py-1 text-center">
+                                                                <h5 class="heading h4 mt-2">Click the button below to Update</h5>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-sm btn-white" data-dismiss="modal" onclick = UpdateMeme("${element.id}")>Update</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>`
+                    )
+                    })
+                }else{
+                    Swal.fire(
+                       'Fail',
+                       'Internal Error',
+                       'warning'
+                     )
+                     return;
+                }
+            }catch(err){
+                Swal.fire(
+                       'Fail',
+                       'Internal Error',
+                       'warning'
+                     )
+                console.log(err);
+                return;
+            }
+        }
+    </script>
+
+<!-- FUnciton to delete a meme  -->
+<script>
+    async function DeleteMeme(id){
+        console.log("In the delete meme frontend function")
+        try{
+            const res = await axios({
+                method : 'delete',
+                url : `http://localhost:8081/delete/${id}`
+            })
+
+            if( res.status == 200 ){
+                location.reload();
+            }else{
+                Swal.fire(
+                       'Fail',
+                       'Internal Error',
+                       'warning'
+                     )
+                     return;
+            }
+        }catch(err){
+            Swal.fire(
+                       'Fail',
+                       'Internal Error',
+                       'warning'
+                     )
+                     return;
+        }
+    }
+</script>
+    <!--  -->
+    <script>
+        Swal.fire(
+                   'Hello Cheers !!',
+                   'Welcome to the XMEME website desgined and made by Abhinav Singh',
+                   'info'
+                 )
+    </script>
+    <script>
+        feather.replace({
+            width: "1em",
+            height: "1em"
+        })
+    </script>
+    <script>
+        ! function (e, t, a, n, g) {
+            e[n] = e[n] || [], e[n].push({
+                "gtm.start": (new Date).getTime(),
+                event: "gtm.js"
+            });
+            var m = t.getElementsByTagName(a)[0],
+                r = t.createElement(a);
+            r.async = !0, r.src = "https://www.googletagmanager.com/gtm.js?id=GTM-MF4DZVH", m.parentNode.insertBefore(r,
+                m)
+        }(window, document, "script", "dataLayer")
+    </script>
+</body>
+
+</html>
