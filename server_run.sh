@@ -3,6 +3,6 @@
 . ~/.nvm/nvm.sh
 npm install 
 
-mongo <XmemeDB> --eval "db.dropDatabase()"
+mongo <xmemeDB> --eval "db.dropDatabase()"
 
 npm start
